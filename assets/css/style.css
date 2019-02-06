@@ -1,5 +1,125 @@
 @charset "utf-8";
 
-dt{
-    font-weight: bold;
+:root{
+	--main-color: #444;
+	--accent-color: #42a;
+	--link-color: #a24;
+}
+
+*{
+	box-sizing: border-box;
+}
+
+h1,h2,h3,h4,h5,h6,p{
+	margin: 0;
+}
+
+a{
+	color: var(--link-color);
+	text-decoration: none;
+}
+
+a:hover{
+	color: #fff;
+	background-color: var(--link-color);
+}
+
+html,body{
+	height: 100%;
+}
+
+body{
+	background-color: #666;
+	line-height: 1.5;
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0;
+	color: var(--main-color);
+}
+
+main{
+	width: 1000px;
+	height: 640px;
+	padding: 10px 20px;
+	overflow: auto;
+	background-color: rgba(255,255,255,.7);
+	border-radius: 10px;
+}
+
+main a{
+	margin: 0 2px;
+	padding: 0 5px;
+}
+
+main h1{
+	font-size: 26px;
+	user-select: none;
+	color: var(--accent-color);
+}
+
+main h2{
+	font-size: 20px;
+	text-decoration: underline;
+}
+
+main p{
+	font-size: 16px;
+	margin: 0 0 0 10px;
+}
+
+main dl{
+	margin: 0 0 0 10px;
+}
+
+main dl dt{
+	font-size: 16px;
+	font-weight: bold;
+}
+
+main dl dd{
+	font-size: 16px;
+	margin: 0 0 0 20px;
+}
+
+main dl dd+dt{
+	margin-top: 10px;
+}
+
+main ul li{
+	font-size: 16px;
+}
+
+main ul li~li{
+	margin-top: 5px;
+}
+
+.flex-pc{
+	display: flex;
+}
+
+.flex-pc>*{
+	flex: 1;
+}
+
+@media screen and (max-width: 1000px){
+	body{
+		display: block;
+	}
+	
+	main{
+		width: 100%;
+		height: auto;
+		overflow: initial;
+		border-radius: 0;
+	}
+
+	.flex-pc{
+		display: block;
+	}
+
+	.flex-pc>*+*{
+		margin-top: 10px;
+	}
 }
